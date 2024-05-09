@@ -11,12 +11,29 @@ module.exports = {
   theme: {
     extend: {
       backgroundImage: {
-        // "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        // "gradient-conic":
-        //   "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+        "yellow-gradient":'linear-gradient(to right, #EBAE38, #EBD938)',
+        "cream-gradient":'linear-gradient(to right, #FFF0C1, #FFFCF1)'
       },
     },
   },
   darkMode: "class",
-  plugins: [nextui()],
+  plugins: [nextui({
+    themes: {
+      light: {
+        colors: {
+          "yellow-primary":'#EBBF38',
+          "blue-primary":'#00C1E8',
+        }, 
+        // container: {
+        //   padding: {
+        //     lg: '168px',
+        //   },
+        // },       
+      },
+      dark: {
+        colors: {},
+      },
+      // ... custom themes
+    },
+  })],
 };
