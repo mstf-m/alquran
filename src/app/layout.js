@@ -20,9 +20,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className="mx-auto container">
+      <body>
         <Providers>
-          <Navbar className="bg-transparent text-white " isBlurred={false}>
+          <Navbar className="mx-auto container bg-transparent text-white" isBlurred={false} maxWidth="full">
             <NavbarBrand className="gap-5">
               <Image
                 width={45}
@@ -33,6 +33,7 @@ export default function RootLayout({ children }) {
               />
               <p className="font-bold">ALQURAN</p>
             </NavbarBrand>
+
             <NavbarContent className="hidden sm:flex gap-0 bg-yellowGradient" justify="center">
               <NavbarItem>
                 <Button as={Link} className="text-white rounded-2xl" color="primary" href="#" variant="flat">

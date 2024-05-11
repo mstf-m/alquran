@@ -14,6 +14,11 @@ module.exports = {
         "yellow-gradient":'linear-gradient(to right, #EBAE38, #EBD938)',
         "cream-gradient":'linear-gradient(to right, #FFF0C1, #FFFCF1)'
       },
+      container: {
+        padding: {
+          lg: '10.5rem',
+        },
+      },       
     },
   },
   darkMode: "class",
@@ -24,11 +29,6 @@ module.exports = {
           "yellow-primary":'#EBBF38',
           "blue-primary":'#00C1E8',
         }, 
-        // container: {
-        //   padding: {
-        //     lg: '168px',
-        //   },
-        // },       
       },
       dark: {
         colors: {},

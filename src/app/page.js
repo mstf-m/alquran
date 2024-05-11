@@ -6,8 +6,8 @@ import Link from "next/link";
 export default function Home() {
   return (
     <main>
-      <section>
-        <Image src="/bg1.png" fill alt="" quality={100} priority />
+      <section className="mx-auto container">
+        <Image src="/bg1.png" className="object-cover max-h-full" fill alt="" quality={100} priority />
 
         <div className="absolute top-52 text-white max-w-96">
           <h1 className="text-4xl font-bold">Alquran Introduction</h1>
@@ -35,6 +35,10 @@ export default function Home() {
             </Button>
           </div>
         </div>
+      </section>
+
+      <section className=" h-9 text-white">
+        sasa
       </section>
     </main>
   );
