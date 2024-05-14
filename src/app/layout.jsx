@@ -22,7 +22,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body>
         <Providers>
-          <Navbar className="mx-auto container bg-transparent text-white" isBlurred={false} maxWidth="full">
+          <Navbar className="fixed mx-auto container bg-transparent text-white" isBlurred={false} maxWidth="full">
             <NavbarBrand className="gap-5">
               <Image
                 width={45}
