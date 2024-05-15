@@ -1,37 +1,53 @@
-'use client'
+"use client";
 
-import { useRef, useEffect } from 'react';
-import { register } from 'swiper/element/bundle';
 import { Image } from "@nextui-org/react";
+import React, { useRef, useState } from "react";
+// Import Swiper React components
+import { Swiper, SwiperSlide } from "swiper/react";
 
-register();
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/effect-coverflow";
+import "swiper/css/pagination";
 
-export const MyComponent = () => {
-  const swiperElRef = useRef(null);
+// import required modules
+import { EffectCoverflow, Pagination } from "swiper/modules";
 
-  useEffect(() => {
-    // listen for Swiper events using addEventListener
-    swiperElRef.current.addEventListener('swiperprogress', (e) => {
-      const [swiper, progress] = e.detail;
-      console.log(progress);
-    });
-
-    swiperElRef.current.addEventListener('swiperslidechange', (e) => {
-      console.log('slide changed');
-    });
-  }, []);
-
+export default function CarouselStories() {
   return (
-    <swiper-container
-      ref={swiperElRef}
-      slides-per-view="3"
-      navigation="true"
-      pagination="true"
+    <Swiper
+      loop
+      effect={"coverflow"}
+      grabCursor={true}
+      centeredSlides={true}
+      slidesPerView={2}
+      coverflowEffect={{
+        rotate: 0,
+        stretch: 0,
+        depth: 200,
+        modifier: 3,
+        slideShadows: false,
+      }}
+      pagination={true}
+      modules={[EffectCoverflow, Pagination]}
+      className="mySwiper h-fit max-w-2xl !overflow-visible"
     >
-      <swiper-slide></swiper-slide>
-      <swiper-slide>Slide 2</swiper-slide>
-      <swiper-slide>Slide 3</swiper-slide>
-      ...
-    </swiper-container>
+      <SwiperSlide className="">
+        <Image src="/slide1.png" alt="" className="w-full object-cover"  removeWrapper/>
+      </SwiperSlide>
+      <SwiperSlide >
+        <Image src="/slide2.png" alt="" className="w-full object-cover" removeWrapper/>
+      </SwiperSlide>
+      <SwiperSlide>
+        <Image src="/slide3.png" alt="" className="w-full object-cover" removeWrapper/>
+      </SwiperSlide>
+      <SwiperSlide>
+        <Image src="/slide3.png" alt="" className="w-full object-cover" removeWrapper />
+      </SwiperSlide>
+      <SwiperSlide>
+        <Image src="/slide3.png" alt="" className="w-full object-cover" removeWrapper/>
+      </SwiperSlide>
+
+    </Swiper>
   );
-};
+}

@@ -22,7 +22,11 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body>
         <Providers>
-          <Navbar className="fixed mx-auto container bg-transparent text-white" isBlurred={false} maxWidth="full">
+          <Navbar
+            className="fixed mx-auto container bg-transparent text-white"
+            isBlurred={false}
+            maxWidth="full"
+          >
             <NavbarBrand className="gap-5">
               <Image
                 width={45}
@@ -34,24 +38,51 @@ export default function RootLayout({ children }) {
               <p className="font-bold">ALQURAN</p>
             </NavbarBrand>
 
-            <NavbarContent className="hidden sm:flex gap-0 bg-yellowGradient" justify="center">
+            <NavbarContent
+              className="hidden sm:flex gap-0 bg-yellowGradient"
+              justify="center"
+            >
               <NavbarItem>
-                <Button as={Link} className="text-white rounded-2xl" color="primary" href="#" variant="flat">
+                <Button
+                  as={Link}
+                  className="text-white rounded-2xl"
+                  color="primary"
+                  href="#"
+                  variant="flat"
+                >
                   HOME
                 </Button>
               </NavbarItem>
               <NavbarItem isActive>
-                <Button as={Link} className="text-white" color="" href="#" variant="flat">
+                <Button
+                  as={Link}
+                  className="text-white"
+                  color=""
+                  href="#"
+                  variant="flat"
+                >
                   QURAN
                 </Button>
               </NavbarItem>
               <NavbarItem>
-                <Button as={Link} className="text-white" color="" href="#" variant="flat">
+                <Button
+                  as={Link}
+                  className="text-white"
+                  color=""
+                  href="#"
+                  variant="flat"
+                >
                   BLOG
                 </Button>
               </NavbarItem>
               <NavbarItem>
-                <Button as={Link} className="text-white" color="" href="#" variant="flat">
+                <Button
+                  as={Link}
+                  className="text-white"
+                  color=""
+                  href="#"
+                  variant="flat"
+                >
                   ABOUT US
                 </Button>
               </NavbarItem>
@@ -75,6 +106,33 @@ export default function RootLayout({ children }) {
           </Navbar>
 
           {children}
+
+          <footer className="w-full bg-neutral-color-800 ">
+            <div className="flex justify-center items-center shadow-[0_0_10px_0_rgba(88,88,88,0.25)] rounded-3xl -translate-y-12 py-6 mx-16 bg-white">
+              <Image
+                width={84}
+                height={84}
+                priority
+                alt="Main Logo"
+                src="/mainLogo.png"
+              />
+              <p className="max-w-xl ml-8">
+                О alquran.ru Коран 
+                <br /> 
+                 главный источник ислама для всех мусульман.
+                Эта священная книга разъясняет основы исламского вероучения, как
+                то:
+              </p>
+              <span className="mx-28">Copyright © 2025 AlQuran</span>
+              <Image
+                width={42}
+                height={42}
+                priority
+                alt=""
+                src="/logo.png"
+              />
+            </div>
+          </footer>
         </Providers>
       </body>
     </html>
