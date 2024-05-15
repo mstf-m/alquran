@@ -11,6 +11,7 @@ import { Divider } from "@nextui-org/react";
 import Link from "next/link";
 import CarouselStories from "@/components/CarouselStories";
 import CarouselBooks from "@/components/CarouselBooks";
+import ReactPageScroller from 'react-page-scroller';
 
 export default function Home() {
   return (

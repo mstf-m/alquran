@@ -1,5 +1,5 @@
 import "./globals.css";
-import { Providers } from "./providers";
+import { Providers } from "@/providers/providers";
 import {
   Navbar,
   NavbarBrand,
@@ -10,6 +10,7 @@ import {
   Button,
 } from "@nextui-org/react";
 import Image from "next/image";
+import FullpageProvider from "@/providers/fullpage-provider";
 
 export const metadata = {
   title: "ALQURAN",
@@ -22,10 +23,12 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body>
         <Providers>
+          <FullpageProvider>
           <Navbar
-            className="fixed mx-auto container bg-transparent text-white"
+            className="mx-auto container bg-transparent text-white"
             isBlurred={false}
             maxWidth="full"
+            position="static"
           >
             <NavbarBrand className="gap-5">
               <Image
@@ -107,7 +110,7 @@ export default function RootLayout({ children }) {
 
           {children}
 
-          <footer className="w-full bg-neutral-color-800 ">
+          <footer className="w-full bg-neutral-color-800">
             <div className="flex justify-center items-center shadow-[0_0_10px_0_rgba(88,88,88,0.25)] rounded-3xl -translate-y-12 py-6 mx-16 bg-white">
               <Image
                 width={84}
@@ -133,6 +136,7 @@ export default function RootLayout({ children }) {
               />
             </div>
           </footer>
+          </FullpageProvider>
         </Providers>
       </body>
     </html>
