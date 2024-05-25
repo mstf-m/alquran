@@ -33,7 +33,9 @@ module.exports = {
           "yellow-primary":'#EBBF38',
           "blue-primary":'#00C1E8',
           "blue-text":'#1544B0',
-          "neutral-color-800": '#19213D'
+          "neutral-color-800": '#19213D',
+          "neutral-color-700": '#353E5C'
+
         }, 
       },
       dark: {

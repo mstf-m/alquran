@@ -1,20 +1,49 @@
+"use client";
+
+import React from "react";
 import {
   Navbar,
   NavbarBrand,
   NavbarContent,
   NavbarItem,
+  NavbarMenuToggle,
+  NavbarMenu,
+  NavbarMenuItem
 } from "@nextui-org/navbar";
 import { Button, Input, Link } from "@nextui-org/react";
 import NextImage from "next/image";
+import { Image } from "@nextui-org/react";
+import { SvgSearch } from "../Svgs";
 
 export default function Header() {
+  const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+
+  const menuItems = [
+    "Profile",
+    "Dashboard",
+    "Activity",
+    "Analytics",
+    "System",
+    "Deployments",
+    "My Settings",
+    "Team Settings",
+    "Help & Feedback",
+    "Log Out",
+  ];
+
   return (
     <Navbar
+      onMenuOpenChange={setIsMenuOpen}
       className="mx-auto container bg-transparent text-white"
       isBlurred={false}
       maxWidth="full"
       position="static"
     >
+      <NavbarMenuToggle
+          aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+          className="sm:hidden"
+        />
+
       <NavbarBrand className="gap-5">
         <NextImage
           width={45}
@@ -83,14 +112,34 @@ export default function Header() {
             mainWrapper: "h-full",
             input: "text-small",
             inputWrapper:
-              "h-full font-normal text-default-500 bg-default-400/20 dark:bg-default-500/20",
+              "h-full font-normal text-default-500 bg-default-400/20 dark:bg-default-500/20 rounded-full",
           }}
-          placeholder="Type to search..."
+          placeholder="Search"
           size="sm"
           startContent=""
+          // label={<div className="bg-blue-primary p-2 rounded-full"><SvgSearch /></div>}
           type="search"
         />
+        <Image src="/Wetalk-logo.png" alt="" />
       </NavbarContent>
+
+
+      <NavbarMenu className="bg-black/60 backdrop-blur-lg">
+        {menuItems.map((item, index) => (
+          <NavbarMenuItem key={`${item}-${index}`}>
+            <Link
+              color={
+                index === 2 ? "primary" : index === menuItems.length - 1 ? "danger" : "success"
+              }
+              className="w-full"
+              href="#"
+              size="lg"
+            >
+              {item}
+            </Link>
+          </NavbarMenuItem>
+        ))}
+      </NavbarMenu>
     </Navbar>
   );
 }

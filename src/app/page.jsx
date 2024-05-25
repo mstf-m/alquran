@@ -25,7 +25,7 @@ export default function Home() {
         <Section1 />
 
         <Section2>
-          <div className=" flex flex-col max-w-80 ml-20 mt-20 gap-10 pb-9">
+          <div className="flex flex-col items-center md:max-w-80 mx-4 md:mx-0 md:ml-20 md:mt-20 gap-10 pb-9">
             <DiscriptionCard
               style="border-gray-50"
               title="Quran"
@@ -99,7 +99,7 @@ export default function Home() {
         </Section3>
 
         <Section2>
-          <div className="flex items-center py-14 px-10 gap-16">
+          <div className="flex flex-col-reverse md:flex-row items-center py-14 px-10 gap-16">
             <div className="flex flex-col max-w-80 gap-10">
 
             <DiscriptionCard

@@ -209,3 +209,23 @@ export const SvgQuranQuestion = () => {
     </svg>
   );
 };
+
+export const SvgSearch = () => {
+  return (
+    <svg
+      width="12"
+      height="12"
+      viewBox="0 0 12 12"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M11.0999 11.1517L8.46198 8.51373M0.899902 5.34821C0.899902 2.92006 2.86831 0.95166 5.29646 0.95166C7.72462 0.95166 9.69301 2.92006 9.69301 5.34821C9.69301 7.77638 7.72462 9.74477 5.29646 9.74477C2.86831 9.74477 0.899902 7.77638 0.899902 5.34821Z"
+        stroke="white"
+        stroke-width="1.2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+    </svg>
+  );
+};
