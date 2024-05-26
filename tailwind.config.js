@@ -16,7 +16,8 @@ module.exports = {
         // linear-gradient(to right, #50FfC1, #FFFCF1)
         "card-gradient":'linear-gradient(450deg, rgba(200, 200, 200, 0.20) 0%, rgba(80, 80, 80, 0.00) 50%)',
         "yellow-radial": 'radial-gradient(75.81% 66.34% at 50% 50%, #FFE3AA 0%, #FFFFFF 43.14%);',
-        "blue-gradient":'linear-gradient(to right, #5AA3F7 22%, #FFFFFF 100%)'
+        "blue-gradient":'linear-gradient(to right, #5AA3F7 22%, #FFFFFF 100%)',
+        "blue-gradient-mobile":'linear-gradient(90deg, #FFF 0%, #5AA3F7 27.31%, #FFF 95.83%)',
       },
       container: {
         padding: {

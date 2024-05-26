@@ -17,8 +17,15 @@ import CarouselBooks from "@/components/CarouselBooks";
 import FullpageProvider from "@/providers/fullpage-provider";
 import FramerTrigger from "@/wrappers/FramerTrigger";
 import DiscriptionCard from "@/components/UI/Cards/DiscriptionCard";
+import { useEffect, useState } from "react";
 
 export default function Home() {
+  const [width, setWidth] = useState(0);
+
+  useEffect(() => {
+    setWidth(window.innerWidth);
+  }, []);
+
   return (
     <main>
       <FullpageProvider>
@@ -48,24 +55,27 @@ export default function Home() {
 
         <Section3>
           <FramerTrigger position={-500}>
-            <Image src="/quran-image2.png" alt="" />
+            {width >= 768 ? (
+              <Image src="/quran-image2.png" alt="" />
+            ) : (
+              <Image src="/quran-image2-mobile.png" alt="" />
+            )}
           </FramerTrigger>
 
           <FramerTrigger position={500}>
             <div>
-
-            <DiscriptionCard
-              style="border-blue-100 max-w-md"
-              title="Quran"
-              content="Alquran Introduction Alquran Introduction Alquran Alquran
+              <DiscriptionCard
+                style="border-blue-100 max-w-md"
+                title="Quran"
+                content="Alquran Introduction Alquran Introduction Alquran Alquran
               Introduction Alquran Introduction Alquran Alquran Introduction
               Alquran Introduction Alquran Alquran Introduction Alquran
               Introduction Alquran Alquran Introduction Alquran Introduction
               Alquran Alquran Introduction Alquran Introduction Alquran"
-            />
+              />
 
-              <div className="mb-9">
-                <div className="flex justify-between items-center bg-white rounded-lg my-4 py-2 px-3">
+              <div className="md:mb-9">
+                <div className="flex justify-between items-center bg-white rounded-lg my-2 md:my-4 py-1 md:py-2 px-3">
                   <div className="flex items-center gap-3">
                     <SvgVesre />
                     <span className="font-semibold text-sm">Verse</span>
@@ -74,7 +84,7 @@ export default function Home() {
                   <span className="text-xs text-[#B4B9C9]">Explain</span>
                 </div>
 
-                <div className="flex justify-between items-center bg-white rounded-lg my-4 py-2 px-3">
+                <div className="flex justify-between items-center bg-white rounded-lg my-2 md:my-4 py-1 md:py-2 px-3">
                   <div className="flex items-center gap-3">
                     <SvgVesre />
                     <span className="font-semibold text-sm">Verse</span>
@@ -83,7 +93,7 @@ export default function Home() {
                   <span className="text-xs text-[#B4B9C9]">Explain</span>
                 </div>
 
-                <div className="flex justify-between items-center bg-white rounded-lg my-4 py-2 px-3">
+                <div className="flex justify-between items-center bg-white rounded-lg my-2 md:my-4 py-1 md:py-2 px-3">
                   <div className="flex items-center gap-3">
                     <SvgVesre />
                     <span className="font-semibold text-sm">Verse</span>
@@ -101,11 +111,10 @@ export default function Home() {
         <Section2>
           <div className="flex flex-col-reverse md:flex-row items-center py-14 px-10 gap-16">
             <div className="flex flex-col max-w-80 gap-10">
-
-            <DiscriptionCard
-              style="border-gray-50"
-              title="Quran"
-              content="Alquran Introduction Alquran Introduction Alquran Alquran
+              <DiscriptionCard
+                style="border-gray-50"
+                title="Quran"
+                content="Alquran Introduction Alquran Introduction Alquran Alquran
               Introduction Alquran Introduction Alquran Alquran Introduction
               Alquran Introduction Alquran Alquran Introduction Alquran
               Introduction Alquran Introduction Alquran Alquran Introduction
@@ -116,7 +125,7 @@ export default function Home() {
               Introduction Introduction Alquran Alquran Introduction Alquran
               Introduction Alquran Alquran Introduction Alquran Introduction
               Alquran"
-            />
+              />
 
               <PrimaryButton title="Quran" href="#" isFull />
             </div>
@@ -129,16 +138,22 @@ export default function Home() {
 
         <Section3>
           <FramerTrigger position={-500}>
-            <Image src="/quran-image3.png" alt="" />
+            {width >= 768 ? (
+              <Image src="/quran-image3.png" alt="" />
+            ) : (
+              <Image
+                src="/quran-image3-mobile.png"
+                alt=""
+              />
+            )}
           </FramerTrigger>
 
           <FramerTrigger position={500}>
             <div>
-
-            <DiscriptionCard
-              style="border-blue-100 max-w-xl"
-              title="Quran"
-              content="Alquran Introduction Alquran Introduction Alquran Alquran
+              <DiscriptionCard
+                style="border-blue-100 max-w-xl"
+                title="Quran"
+                content="Alquran Introduction Alquran Introduction Alquran Alquran
               Introduction Alquran Introduction Alquran Alquran Introduction
               Alquran Introduction Alquran Alquran Introduction Alquran
               Introduction Alquran Alquran Introduction Alquran Introduction
@@ -152,7 +167,7 @@ export default function Home() {
               AlquranIntroduction Alquran Introduction Alquran Alquran
               Introduction Alquran Introduction Alquran Alquran Introduction
               Alquran Introduction Alquran Alquran"
-            />
+              />
 
               <div className="grid grid-cols-3 gap-4 mt-10 mb-8">
                 <div className="flex justify-between items-center bg-white rounded-lg py-2 px-3">
