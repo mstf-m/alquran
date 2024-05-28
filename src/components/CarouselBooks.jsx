@@ -12,22 +12,33 @@ import "swiper/css/pagination";
 // import required modules
 // import { Pagination } from "swiper/modules";
 
-export default function CarouselStories() {
+export default function CarouselStories({screenWidth}) {
   return (
+    <>
+    {screenWidth >= 768 ? ( 
     <Swiper
-    slidesPerView={5}
-    spaceBetween={40}
-    pagination={false}
-    // modules={[Pagination]}
-    className="mySwiper h-fit max-w-6xl !overflow-visible"
+      slidesPerView={5}
+      spaceBetween={40}
+      pagination={false}
+      // modules={[Pagination]}
+      className="mySwiper h-fit max-w-6xl !overflow-visible"
   >
-    <SwiperSlide><Image src="/book.png" alt="" className="w-full object-cover" removeWrapper/></SwiperSlide>
-    <SwiperSlide><Image src="/book.png" alt="" className="w-full object-cover" removeWrapper/></SwiperSlide>
-    <SwiperSlide><Image src="/book.png" alt="" className="w-full object-cover" removeWrapper/></SwiperSlide>
-    <SwiperSlide><Image src="/book.png" alt="" className="w-full object-cover" removeWrapper/></SwiperSlide>
-    <SwiperSlide><Image src="/book.png" alt="" className="w-full object-cover" removeWrapper/></SwiperSlide>
-    <SwiperSlide><Image src="/book.png" alt="" className="w-full object-cover" removeWrapper/></SwiperSlide>
-    <SwiperSlide><Image src="/book.png" alt="" className="w-full object-cover" removeWrapper/></SwiperSlide>
-  </Swiper>
+      <SwiperSlide><Image src="/book.png" alt="" className="w-full object-cover" removeWrapper/></SwiperSlide>
+      <SwiperSlide><Image src="/book.png" alt="" className="w-full object-cover" removeWrapper/></SwiperSlide>
+      <SwiperSlide><Image src="/book.png" alt="" className="w-full object-cover" removeWrapper/></SwiperSlide>
+      <SwiperSlide><Image src="/book.png" alt="" className="w-full object-cover" removeWrapper/></SwiperSlide>
+      <SwiperSlide><Image src="/book.png" alt="" className="w-full object-cover" removeWrapper/></SwiperSlide>
+      <SwiperSlide><Image src="/book.png" alt="" className="w-full object-cover" removeWrapper/></SwiperSlide>
+      <SwiperSlide><Image src="/book.png" alt="" className="w-full object-cover" removeWrapper/></SwiperSlide>
+    </Swiper>) : (
+    <div className="grid grid-cols-2 gap-4">
+      <Image src="/book.png" alt="" className="w-4/5 object-cover" removeWrapper/>
+      <Image src="/book.png" alt="" className="w-4/5  object-cover" removeWrapper/>
+      <Image src="/book.png" alt="" className="w-4/5  object-cover" removeWrapper/>
+      <Image src="/book.png" alt="" className="w-4/5  object-cover" removeWrapper/>
+    </div>
+  ) }
+   
+  </>
   );
 }

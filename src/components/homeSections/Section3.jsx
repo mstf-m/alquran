@@ -2,7 +2,7 @@ import TitleLabel from "../UI/TitleLabel";
 
 export default function Section3({ children }) {
   return (
-    <section className="h-screen relative">
+    <section className="h-screen relative overflow-hidden">
       <div className="md:bg-blue-gradient bg-blue-gradient-mobile blur-2xl h-full w-full absolute top-0 left-0"></div>
 
       <div className="h-full bg-[url('/bg2.png')] bg-fill relative z-10">

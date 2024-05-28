@@ -12,25 +12,28 @@ import "swiper/css/pagination";
 // import required modules
 import { EffectCoverflow, Pagination } from "swiper/modules";
 
-export default function CarouselStories() {
+export default function CarouselStories({ screenWidth }) {
   return (
     <Swiper
-      initialSlide={2}
-      loop
-      effect={"coverflow"}
-      grabCursor={true}
-      centeredSlides={true}
-      slidesPerView={2}
-      coverflowEffect={{
-        rotate: 0,
-        stretch: 0,
-        depth: 200,
-        modifier: 3,
-        slideShadows: false,
-      }}
+      {...(screenWidth >= 768 ? {
+        initialSlide: 2,
+        loop: true,
+        effect: "coverflow",
+        grabCursor: true,
+        centeredSlides: true,
+        slidesPerView: 2,
+        coverflowEffect: {
+          rotate: 0,
+          stretch: 0,
+          depth: 200,
+          modifier: 3,
+          slideShadows: false,
+        }
+      } : {})}
+      
       pagination={true}
       modules={[EffectCoverflow, Pagination]}
-      className="mySwiper h-fit max-w-2xl !overflow-visible"
+      className="mySwiper h-fit max-w-xs md:max-w-2xl !overflow-visible"
     >
       <SwiperSlide className="">
         <Image

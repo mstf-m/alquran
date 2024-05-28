@@ -13,11 +13,11 @@ module.exports = {
       backgroundImage: {
         "yellow-gradient":'linear-gradient(to right, #EBAE38, #EBD938)',
         "cream-gradient":'linear-gradient(to right, #FFF0C1, #FFFCF1)',
-        // linear-gradient(to right, #50FfC1, #FFFCF1)
+        "cream-gradient-mobile":'linear-gradient(180deg, #FFF 0%, #FFF3CF 34%, #FFF3CF 55%, #FFF 100%)',
         "card-gradient":'linear-gradient(450deg, rgba(200, 200, 200, 0.20) 0%, rgba(80, 80, 80, 0.00) 50%)',
         "yellow-radial": 'radial-gradient(75.81% 66.34% at 50% 50%, #FFE3AA 0%, #FFFFFF 43.14%);',
         "blue-gradient":'linear-gradient(to right, #5AA3F7 22%, #FFFFFF 100%)',
-        "blue-gradient-mobile":'linear-gradient(90deg, #FFF 0%, #5AA3F7 27.31%, #FFF 95.83%)',
+        "blue-gradient-mobile":'linear-gradient(to bottom, #FFF 0%, #5AA3F7 27.31%, #FFF 95.83%)',
       },
       container: {
         padding: {

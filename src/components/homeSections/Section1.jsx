@@ -7,18 +7,13 @@ import Header from "../UI/Header";
 import PrimaryButton from "../UI/Buttons/PrimaryButton";
 import { useEffect, useState } from "react";
 
-export default function Section1() {
-  const [width, setWidth] = useState(0);
-
-  useEffect(() => {
-    setWidth(window.innerWidth);
-  }, []);
+export default function Section1({screenWidth}) {
 
   return (
     <section className="h-screen flex flex-col justify-between md:justify-start">
       <Header />
 
-      {width >= 768 ? (
+      {screenWidth >= 768 ? (
         <NextImage
           fill
           priority
@@ -52,7 +47,7 @@ export default function Section1() {
             <div className="flex mt-5 md:mt-20 mb-10 gap-4 justify-between">
               <PrimaryButton title="See More" href="#" isFull />
               <Button
-                className="bg-transparent text-yellow-primary border border-yellow-primary rounded-3xl w-full py-6 font-semibold"
+                className="bg-transparent text-yellow-primary border border-yellow-primary rounded-3xl w-full py-3 md:py-6 font-semibold"
                 as={Link}
                 href="#"
               >
