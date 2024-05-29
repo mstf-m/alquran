@@ -15,16 +15,16 @@ import NextImage from "next/image";
 import { Image } from "@nextui-org/react";
 import { SvgSearch } from "../Svgs";
 
-export default function Header() {
+export default function HeaderSecondary() {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
 
   const menuItems = ["HOME", "QURAN", "BLOG", "ABOUT US", "Log Out"];
 
   return (
-    <header>
+    <header className="w-full bg-header-blue-gradient">
       <Navbar
         onMenuOpenChange={setIsMenuOpen}
-        className="mx-auto container bg-transparent text-white"
+        className="mx-auto container bg-white text-neutral-color-800 translate-y-6 rounded-2xl shadow-[0_2px_4px_0_rgba(0,0,0,0.1)] py-3"
         isBlurred={false}
         maxWidth="full"
         position="static"
@@ -52,7 +52,7 @@ export default function Header() {
           <NavbarItem>
             <Button
               as={Link}
-              className="text-white rounded-2xl"
+              className="text-neutral-color-800 rounded-2xl"
               color="primary"
               href="#"
               variant="flat"
@@ -63,7 +63,7 @@ export default function Header() {
           <NavbarItem isActive>
             <Button
               as={Link}
-              className="text-white"
+              className="text-neutral-color-800"
               color=""
               href="#"
               variant="flat"
@@ -74,7 +74,7 @@ export default function Header() {
           <NavbarItem>
             <Button
               as={Link}
-              className="text-white"
+              className="text-neutral-color-800"
               color=""
               href="#"
               variant="flat"
@@ -85,7 +85,7 @@ export default function Header() {
           <NavbarItem>
             <Button
               as={Link}
-              className="text-white"
+              className="text-neutral-color-800"
               color=""
               href="#"
               variant="flat"

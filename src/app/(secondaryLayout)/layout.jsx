@@ -1,9 +1,19 @@
-import React from 'react'
+import Breadcrumb from '@/components/UI/Breadcrumb'
+import Footer from '@/components/UI/Footer'
+import HeaderSecondary from '@/components/UI/HeaderSecondary'
 
-export default function layout({children}) {
+export default function Layout({children}) {
+
+
   return (
-    <div>nnn
+    <div>
+      <HeaderSecondary />
+      <Breadcrumb />
+
       {children}
+ 
+
+      <Footer />
     </div>
   )
 }

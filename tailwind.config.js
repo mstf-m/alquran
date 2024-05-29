@@ -18,6 +18,8 @@ module.exports = {
         "yellow-radial": 'radial-gradient(75.81% 66.34% at 50% 50%, #FFE3AA 0%, #FFFFFF 43.14%);',
         "blue-gradient":'linear-gradient(to right, #5AA3F7 22%, #FFFFFF 100%)',
         "blue-gradient-mobile":'linear-gradient(to bottom, #FFF 0%, #5AA3F7 27.31%, #FFF 95.83%)',
+        "header-blue-gradient":'linear-gradient(90deg, #062368 0%, #1C4195 58.5%, #0D1C31 100%)',
+        "gold-gradient":'linear-gradient(90deg, #EBAE38 0%, #EBB938 26.5%, #FFF 100%)',
       },
       container: {
         padding: {

@@ -12,8 +12,8 @@ import {
   SvgQuranQuestion,
 } from "@/components/Svgs";
 import PrimaryButton from "@/components/UI/Buttons/PrimaryButton";
-import CarouselStories from "@/components/CarouselStories";
-import CarouselBooks from "@/components/CarouselBooks";
+import CarouselStories from "@/components/UI/Carousels/CarouselStories";
+import CarouselBooks from "@/components/UI/Carousels/CarouselBooks";
 import FullpageProvider from "@/providers/fullpage-provider";
 import FramerTrigger from "@/wrappers/FramerTrigger";
 import DiscriptionCard from "@/components/UI/Cards/DiscriptionCard";
