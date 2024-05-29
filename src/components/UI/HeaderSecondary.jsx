@@ -13,7 +13,6 @@ import {
 import { Button, Input, Link } from "@nextui-org/react";
 import NextImage from "next/image";
 import { Image } from "@nextui-org/react";
-import { SvgSearch } from "../Svgs";
 
 export default function HeaderSecondary() {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);

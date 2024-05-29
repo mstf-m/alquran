@@ -223,7 +223,7 @@ export default function Home() {
         <Section2 footer>
           <div className="flex flex-col items-center gap-10 py-14 pl-10 overflow-hidden px-6 md:px-0">
             <CarouselBooks screenWidth={screenWidth}/>
-            <PrimaryButton title="See More" href="#" />
+            <PrimaryButton title="See More" href="/library"/>
           </div>
         </Section2>
       </FullpageProvider>
