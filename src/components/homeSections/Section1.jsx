@@ -6,6 +6,7 @@ import { Link, Button } from "@nextui-org/react";
 import Header from "../UI/Header";
 import PrimaryButton from "../UI/Buttons/PrimaryButton";
 import { useEffect, useState } from "react";
+import SecondaryButton from "../UI/Buttons/secondaryButton";
 
 export default function Section1({screenWidth}) {
 
@@ -46,13 +47,7 @@ export default function Section1({screenWidth}) {
             </h2>
             <div className="flex mt-5 md:mt-20 mb-10 gap-4 justify-between">
               <PrimaryButton title="See More" href="#" isFull />
-              <Button
-                className="bg-transparent text-yellow-primary border border-yellow-primary rounded-3xl w-full py-3 md:py-6 font-semibold"
-                as={Link}
-                href="#"
-              >
-                Details
-              </Button>
+              <SecondaryButton title="Details" href="#" isFull />
             </div>
           </div>
         </div>

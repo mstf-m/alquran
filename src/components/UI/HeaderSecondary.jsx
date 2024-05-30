@@ -103,7 +103,7 @@ export default function HeaderSecondary() {
               inputWrapper:
                 "h-full font-normal text-default-500 bg-default-400/20 dark:bg-default-500/20 rounded-full",
             }}
-            placeholder="Search"
+            placeholder="   Search"
             size="sm"
             startContent=""
             // label={<div className="bg-blue-primary p-2 rounded-full"><SvgSearch /></div>}

@@ -8,11 +8,18 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
+import { useEffect, useState } from "react";
 
 // import required modules
 // import { Pagination } from "swiper/modules";
 
-export default function CarouselStories({screenWidth}) {
+export default function CarouselBooks() {
+  const [screenWidth, setScreenWidth] = useState(0);  
+
+  useEffect(() => {
+    setScreenWidth(window.innerWidth);
+  }, []);
+  
   return (
     <>
     {screenWidth >= 768 ? ( 
