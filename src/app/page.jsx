@@ -21,21 +21,19 @@ import { useEffect, useState } from "react";
 
 export default function Home() {
   const [screenWidth, setScreenWidth] = useState(0);
-  // const [animationStartPosition, setAnimationStartPosition] = useState(0);
-  
+  const [animationStartPosition, setAnimationStartPosition] = useState(0);
 
   useEffect(() => {
     setScreenWidth(window.innerWidth);
   }, []);
 
-  // useEffect(() => {
-  //   screenWidth >= 768 ? setAnimationStartPosition(500) : setAnimationStartPosition(100);
-  // }, [screenWidth]);
+  useEffect(() => {
+    screenWidth >= 768 ? setAnimationStartPosition(500) : setAnimationStartPosition(100);
+  }, [screenWidth]);
 
-  
   return (
     <main>
-      <FullpageProvider>
+      <FullpageProvider screenWidth={screenWidth}>
         <Section1 screenWidth={screenWidth} />
 
         <Section2 isJustifyStart>
@@ -61,7 +59,7 @@ export default function Home() {
         </Section2>
 
         <Section3>
-          <FramerTrigger position={-500}>
+          <FramerTrigger position={-animationStartPosition}>
             {screenWidth >= 768 ? (
               <Image src="/quran-image2.png" alt="" />
             ) : (
@@ -69,7 +67,7 @@ export default function Home() {
             )}
           </FramerTrigger>
 
-          <FramerTrigger position={500}>
+          <FramerTrigger position={animationStartPosition}>
             <div>
               <DiscriptionCard
                 style="border-blue-100 max-w-md"
@@ -144,7 +142,7 @@ export default function Home() {
         </Section2>
 
         <Section3>
-          <FramerTrigger position={-200}>
+          <FramerTrigger position={-animationStartPosition}>
             {screenWidth >= 768 ? (
               <Image src="/quran-image3.png" alt="" />
             ) : (
@@ -152,7 +150,7 @@ export default function Home() {
             )}
           </FramerTrigger>
 
-          <FramerTrigger position={500}>
+          <FramerTrigger position={animationStartPosition}>
             <div>
               <DiscriptionCard
                 style="border-blue-100 max-w-xl"
@@ -212,7 +210,6 @@ export default function Home() {
                     </div>
                   </>
                 ) : null}
-
               </div>
 
               <PrimaryButton title="See More" href="#" />
@@ -223,7 +220,7 @@ export default function Home() {
         <Section2 footer>
           <div className="flex flex-col items-center gap-10 py-14 pl-10 overflow-hidden px-6 md:px-0">
             <CarouselBooks />
-            <PrimaryButton title="See More" href="/library"/>
+            <PrimaryButton title="See More" href="/library" />
           </div>
         </Section2>
       </FullpageProvider>

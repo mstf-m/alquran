@@ -34,7 +34,7 @@ export default function Section1({screenWidth}) {
         />
       )}
 
-      <FramerTrigger position={-500}>
+      <FramerTrigger position={-200}>
         <div className="flex justify-center md:justify-start pt-56 relative px-4 md:px-0 mx-auto container">
           <div className="text-white max-w-96">
             <h1 className="text-3xl md:text-4xl font-bold text-center md:text-left">Alquran Introduction</h1>
