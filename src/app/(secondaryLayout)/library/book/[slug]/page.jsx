@@ -6,7 +6,7 @@ import { Image } from "@nextui-org/react";
 import Breadcrumb from "@/components/UI/Breadcrumb";
 
 async function getData(id) {
-  const res = await fetch(`${process.env.mainURL}/posts/${id}`)
+  const res = await fetch(`${process.env.mainURL}/wp/v2/posts/${id}`)
   if (!res.ok) {
     throw new Error('Failed to fetch data')
   }
