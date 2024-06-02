@@ -23,14 +23,14 @@ export default function HeaderSecondary() {
     <header className="w-full bg-header-blue-gradient">
       <Navbar
         onMenuOpenChange={setIsMenuOpen}
-        className="mx-auto container bg-white text-neutral-color-800 translate-y-6 rounded-2xl shadow-[0_2px_4px_0_rgba(0,0,0,0.1)] py-3"
+        className="mx-auto container bg-transparent md:bg-white text-neutral-color-800 md:translate-y-6 rounded-2xl shadow-[0_2px_4px_0_rgba(0,0,0,0.1)] py-3"
         isBlurred={false}
         maxWidth="full"
         position="static"
       >
         <NavbarMenuToggle
           aria-label={isMenuOpen ? "Close menu" : "Open menu"}
-          className="sm:hidden"
+          className="sm:hidden text-white"
         />
 
         <NavbarBrand className="gap-5">
@@ -41,7 +41,7 @@ export default function HeaderSecondary() {
             alt="Main Logo"
             src="/mainLogo.png"
           />
-          <p className="font-bold">ALQURAN</p>
+          <p className="font-bold hidden md:flex">ALQURAN</p>
         </NavbarBrand>
 
         <NavbarContent
@@ -112,7 +112,7 @@ export default function HeaderSecondary() {
           <Image src="/Wetalk-logo.png" alt="" />
         </NavbarContent>
 
-        <NavbarMenu className="bg-black/60 backdrop-blur-lg">
+        <NavbarMenu className="bg-black/10 backdrop-blur-lg">
           {menuItems.map((item, index) => (
             <NavbarMenuItem key={`${item}-${index}`}>
               <Link

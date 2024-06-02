@@ -1,11 +1,8 @@
 import { Divider } from "@nextui-org/react";
 import NextImage from "next/image";
 import FramerTrigger from "@/wrappers/FramerTrigger";
-
-import { Link, Button } from "@nextui-org/react";
 import Header from "../UI/Header";
 import PrimaryButton from "../UI/Buttons/PrimaryButton";
-import { useEffect, useState } from "react";
 import SecondaryButton from "../UI/Buttons/secondaryButton";
 
 export default function Section1({screenWidth}) {
