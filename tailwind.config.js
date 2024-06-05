@@ -49,6 +49,8 @@ module.exports = {
             "blue-text": "#1544B0",
             "neutral-color-800": "#19213D",
             "neutral-color-700": "#353E5C",
+            "neutral-color-600":"#6D758F",
+            "neutral-color-400":"#E1E4ED",
           },
         },
         dark: {

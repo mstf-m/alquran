@@ -43,7 +43,7 @@ export default function Section1({screenWidth}) {
               Alquran Alquran Introduction
             </h2>
             <div className="flex mt-5 md:mt-20 mb-10 gap-4 justify-between">
-              <PrimaryButton title="See More" href="#" isFull />
+              <PrimaryButton title="Quran" href="/quran" isFull />
               <SecondaryButton title="Details" href="#" isFull />
             </div>
           </div>

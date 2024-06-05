@@ -1,8 +1,8 @@
 import BgPattern from "@/components/UI/BgPattern";
-import BookCard from "@/components/UI/Cards/BookCard";
 import { Pagination } from "@nextui-org/react";
 import Breadcrumb from "@/components/UI/Breadcrumb";
 import AyehCard from "@/components/UI/Cards/AyehCard";
+import {Tabs, Tab} from "@nextui-org/react";
 
 async function getData() {
   const res = await fetch(`${process.env.mainURL}/quran/v1/surah`);
@@ -12,14 +12,50 @@ async function getData() {
   return res.json();
 }
 
+
+
 export default async function Page() {
   const data = await getData();
+
+  // let tabs = [
+  //   {
+  //     id: "photos",
+  //     label: "Photos",
+  //     content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+  //   },
+  //   {
+  //     id: "music",
+  //     label: "Music",
+  //     content: "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
+  //   },
+  //   {
+  //     id: "videos",
+  //     label: "Videos",
+  //     content: "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+  //   }
+  // ];
+
+
   return (
     <div className="relative overflow-hidden">
       <Breadcrumb />
       <BgPattern />
-      <div className="mx-auto container flex flex-col items-center mb-20 md:mb-28 gap-16">
-        <div className="w-full grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-y-8 gap-x-10 justify-between mt-2">
+      <div className="mx-auto container mb-20 md:mb-28">
+
+      {/* <Tabs aria-label="Dynamic tabs" items={tabs}>
+        {(item) => (
+          <Tab key={item.id} title={item.label}>
+            <Card>
+              <CardBody>
+                {item.content}
+              </CardBody>
+            </Card>  
+          </Tab>
+        )}
+      </Tabs> */}
+
+        <div className="w-full flex flex-col items-center gap-10 pt-12 pb-8 px-12 shadow-[0_4px_4px_0_rgba(0,0,0,0.08)] backdrop-blur-[2px] rounded-3xl">
+        <div className="w-full grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-y-6 md:gap-x-28 xl:gap-x-20 mt-2">
           {data.map((obj, index) => (
             <AyehCard key={index} data={obj} />
           ))}
@@ -39,6 +75,7 @@ export default async function Page() {
             cursor: "bg-yellow-gradient text-blue-text",
           }}
         />
+        </div>
       </div>
     </div>
   );

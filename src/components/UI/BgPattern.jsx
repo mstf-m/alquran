@@ -16,12 +16,12 @@ export default function BgPattern() {
         className="absolute top-[700px] right-0 -z-10"
         removeWrapper
       />
-       {/* <Image
+       <Image
         src="/bg4.png"
         alt=""
         className="absolute top-[1100px] left-0 -z-10 rotate-180"
         removeWrapper
-      /> */}
+      />
     </>
   );
 }
