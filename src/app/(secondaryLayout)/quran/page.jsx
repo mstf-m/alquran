@@ -1,8 +1,7 @@
 import BgPattern from "@/components/UI/BgPattern";
-import { Pagination } from "@nextui-org/react";
 import Breadcrumb from "@/components/UI/Breadcrumb";
-import AyehCard from "@/components/UI/Cards/AyehCard";
-import {Tabs, Tab} from "@nextui-org/react";
+import SurahCard from "@/components/UI/Cards/SurahCard";
+import { Tabs, Tab } from "@nextui-org/react";
 
 async function getData() {
   const res = await fetch(`${process.env.mainURL}/quran/v1/surah`);
@@ -11,8 +10,6 @@ async function getData() {
   }
   return res.json();
 }
-
-
 
 export default async function Page() {
   const data = await getData();
@@ -35,14 +32,12 @@ export default async function Page() {
   //   }
   // ];
 
-
   return (
     <div className="relative overflow-hidden">
       <Breadcrumb />
       <BgPattern />
       <div className="mx-auto container mb-20 md:mb-28">
-
-      {/* <Tabs aria-label="Dynamic tabs" items={tabs}>
+        {/* <Tabs aria-label="Dynamic tabs" items={tabs}>
         {(item) => (
           <Tab key={item.id} title={item.label}>
             <Card>
@@ -54,27 +49,12 @@ export default async function Page() {
         )}
       </Tabs> */}
 
-        <div className="w-full flex flex-col items-center gap-10 pt-12 pb-8 px-12 shadow-[0_4px_4px_0_rgba(0,0,0,0.08)] backdrop-blur-[2px] rounded-3xl">
-        <div className="w-full grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-y-6 md:gap-x-28 xl:gap-x-20 mt-2">
-          {data.map((obj, index) => (
-            <AyehCard key={index} data={obj} />
-          ))}
-        </div>
-
-        <Pagination
-          isDisabled={false}
-          total={5}
-          initialPage={1}
-          showShadow
-          color="warning"
-          loop
-          showControls
-          classNames={{
-            wrapper: "",
-            item: "text-blue-text",
-            cursor: "bg-yellow-gradient text-blue-text",
-          }}
-        />
+        <div className="w-full flex flex-col items-center gap-10 py-12 px-12 shadow-[0_4px_4px_0_rgba(0,0,0,0.08)] backdrop-blur-[2px] rounded-3xl">
+          <div className="w-full grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-y-6 md:gap-x-28 xl:gap-x-20 mt-2">
+            {data.map((obj, index) => (
+              <SurahCard key={index} data={obj} />
+            ))}
+          </div>
         </div>
       </div>
     </div>
