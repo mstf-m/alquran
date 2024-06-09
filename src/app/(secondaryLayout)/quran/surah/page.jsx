@@ -1,6 +1,9 @@
+'use client'
+
 import BgPattern from "@/components/UI/BgPattern";
 import Breadcrumb from "@/components/UI/Breadcrumb";
 import SurahCard from "@/components/UI/Cards/SurahCard";
+import { useQuranStore } from "@/stores/quran-store";
 
 async function getAllSurahs() {
   const res = await fetch(`${process.env.mainURL}/quran/v1/surah`);
@@ -19,7 +22,9 @@ async function getAllSurahs() {
 // }
 
 export default async function page() {
-  const allSurahs = await getAllSurahs();
+  // const bears = useQuranStore((state) => state.SurahId)
+  
+  // const allSurahs = await getAllSurahs();
 //   const getSingleSurah = await getSurah();
 
   return (
