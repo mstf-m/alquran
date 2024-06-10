@@ -1,4 +1,4 @@
-'use client'
+"use client";
 
 import BgPattern from "@/components/UI/BgPattern";
 import Breadcrumb from "@/components/UI/Breadcrumb";
@@ -13,20 +13,21 @@ async function getAllSurahs() {
   return res.json();
 }
 
-// async function getSurah() {
-//   const res = await fetch(`${process.env.mainURL}/quran/v1/surah?id=${id}`);
-//   if (!res.ok) {
-//     throw new Error("Failed to fetch data");
-//   }
-//   return res.json();
-// }
+async function getSurah(id) {
+  const res = await fetch(`${process.env.mainURL}/quran/v1/surah?id=${id}`);
+  if (!res.ok) {
+    throw new Error("Failed to fetch data");
+  }
+  return res.json();
+}
 
 export default async function page() {
-  // const bears = useQuranStore((state) => state.SurahId)
+  const { surahId } = useQuranStore();
   
-  // const allSurahs = await getAllSurahs();
-//   const getSingleSurah = await getSurah();
-
+  const allSurahs = await getAllSurahs();
+  const getSingleSurah = await getSurah(surahId);
+  console.log("salam", getSingleSurah);
+  
   return (
     <div className="relative overflow-hidden">
       <Breadcrumb />
@@ -41,7 +42,7 @@ export default async function page() {
         </div>
 
         <div className="col-span-2 flex flex-col items-center gap-10 py-4 px-20 shadow-[0_4px_4px_0_rgba(0,0,0,0.08)] backdrop-blur-[2px] rounded-3xl">
-          <div className="w-full"></div>
+          <div className="w-full">{getSingleSurah[0].name_en}</div>
         </div>
       </div>
     </div>
