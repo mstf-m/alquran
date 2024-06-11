@@ -1,6 +1,6 @@
 import BgPattern from "@/components/UI/BgPattern";
 import PrimaryButton from "@/components/UI/Buttons/PrimaryButton";
-import SecondaryButton from "@/components/UI/Buttons/secondaryButton";
+import SecondaryButton from "@/components/UI/Buttons/SecondaryButton";
 import CarouselBooks from "@/components/UI/Carousels/CarouselBooks";
 import { Image } from "@nextui-org/react";
 import Breadcrumb from "@/components/UI/Breadcrumb";

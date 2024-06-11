@@ -3,7 +3,7 @@ import NextImage from "next/image";
 import FramerTrigger from "@/wrappers/FramerTrigger";
 import Header from "../UI/Header";
 import PrimaryButton from "../UI/Buttons/PrimaryButton";
-import SecondaryButton from "../UI/Buttons/secondaryButton";
+import SecondaryButton from "../UI/Buttons/SecondaryButton";
 
 export default function Section1({screenWidth}) {
 
