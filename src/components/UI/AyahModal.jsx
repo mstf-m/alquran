@@ -1,4 +1,10 @@
 import {Modal, ModalContent, ModalHeader, ModalBody, ModalFooter, Button} from "@nextui-org/react";
+import localFont from 'next/font/local'
+
+const myFont = localFont({
+  src: '../../../public/font/ScheherazadeRegOT.ttf',
+  display: 'swap',
+})
 
 export default function AyahModal({isOpen,onOpenChange, data}) {
   return (
@@ -8,7 +14,7 @@ export default function AyahModal({isOpen,onOpenChange, data}) {
         <>
           <ModalHeader className=""></ModalHeader>
           <ModalBody>
-            <p dir="rtl"> 
+            <p dir="rtl" className={`${myFont.className} text-3xl`}> 
              {data.text}
             </p>
             <p>

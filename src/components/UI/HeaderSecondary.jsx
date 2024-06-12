@@ -52,7 +52,7 @@ export default function HeaderSecondary() {
             <Button
               as={Link}
               className="text-neutral-color-800 rounded-2xl"
-              color="primary"
+              color=""
               href="#"
               variant="flat"
             >
@@ -63,7 +63,7 @@ export default function HeaderSecondary() {
             <Button
               as={Link}
               className="text-neutral-color-800"
-              color=""
+              color="primary"
               href="#"
               variant="flat"
             >

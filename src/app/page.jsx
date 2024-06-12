@@ -20,7 +20,7 @@ import DiscriptionCard from "@/components/UI/Cards/DiscriptionCard";
 import { useEffect, useState } from "react";
 
 export default function Home() {
-  const [screenWidth, setScreenWidth] = useState(0);
+  const [screenWidth, setScreenWidth] = useState(1000);
   const [animationStartPosition, setAnimationStartPosition] = useState(0);
 
   useEffect(() => {

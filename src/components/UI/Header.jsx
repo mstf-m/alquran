@@ -65,7 +65,7 @@ export default function Header() {
               as={Link}
               className="text-white"
               color=""
-              href="#"
+              href="/quran"
               variant="flat"
             >
               QURAN

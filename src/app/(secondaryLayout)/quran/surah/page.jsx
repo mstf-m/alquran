@@ -14,6 +14,7 @@ export default function Page() {
   const [allSurahs, setAllSurahs] = useState([]);
   const [singleSurah, setSingleSurah] = useState([]);
   const [singleAyah, setSingleAyah] = useState([]);
+  const [isFirstLoad, setIsFirstLoad] = useState(true);
 
   const { surahId, ayahId } = useQuranStore();
 
@@ -29,6 +30,8 @@ export default function Page() {
       setAllSurahs(result.ayahs);
     }
     getAllSurahs();
+
+    setIsFirstLoad(false);
   }, []);
 
   useEffect(() => {
@@ -59,29 +62,32 @@ export default function Page() {
     }
 
     getSurah(ayahId);
-    onOpen();
-  }, [ayahId, onOpen]);
+    if(!isFirstLoad)
+      onOpen();
+    
+  }, [ayahId]);
 
   return (
     <>
     <div className="relative overflow-hidden">
       <Breadcrumb />
       <BgPattern />
-      <div className="mx-auto container mb-20 md:mb-28 grid grid-cols-1 md:grid-cols-3 gap-8">
-        <div className="col-span-1 flex justify-center gap-4 p-4 shadow-[0_4px_4px_0_rgba(0,0,0,0.08)] backdrop-blur-[2px] rounded-3xl">
-          <div className="flex flex-col gap-4 max-h-screen overflow-y-auto">
+      <div className="mx-auto container mb-20 md:mb-28 grid grid-cols-1 md:grid-cols-4 gap-8">
+       
+        <div className="md:col-span-1 flex flex-col md:flex-row justify-center gap-4 p-4 border border-neutral-color-400 bg-[#C2C2C2]/10 shadow-[0_4px_4px_0_rgba(0,0,0,0.08)] backdrop-blur-[2px] rounded-3xl max-h-screen">
+          <div className="flex md:flex-col gap-4 overflow-y-auto">
             {allSurahs.map((obj, index) => (
               <SurahButton key={index} data={obj} />
             ))}
           </div>
-          <div className="flex flex-col gap-4 max-h-screen overflow-y-auto">
+          <div className="flex md:flex-col gap-4 overflow-y-auto">
             {singleSurah.map((obj, index) => (
               <AyahButton key={index} id={obj.id} i={index} />
             ))}
           </div>
         </div>
 
-        <div className="col-span-2 flex flex-col items-center py-4 px-20 shadow-[0_4px_4px_0_rgba(0,0,0,0.08)] backdrop-blur-[2px] rounded-3xl max-h-screen overflow-y-auto">
+        <div className="md:col-span-3 flex flex-col items-center py-4 px-20 border border-neutral-color-400 bg-white/20 shadow-[0_4px_4px_0_rgba(0,0,0,0.08)] backdrop-blur-[2px] rounded-3xl max-h-screen overflow-y-auto">
           <div className="px-20 py-6">
             <div
               className="text-justify leading-10 text-xl font-bold"
