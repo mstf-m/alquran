@@ -28,7 +28,7 @@ export default function Ayah({ id, text, number, onOpen }) {
 
   return firstAyah ? (
     <>
-    <p className={`${myFont.className} text-4xl text-center pb-4 px-1 cursor-pointer hover:text-blue-text hover:drop-shadow-lg`}>بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ </p>
+    <p className={`${myFont.className} text-4xl text-center pb-4 px-1 cursor-default`}>بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ </p>
     <p
       className={`${myFont.className} text-4xl inline px-1 cursor-pointer hover:text-blue-text hover:drop-shadow-lg`}
       onClick={() => {

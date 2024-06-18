@@ -51,7 +51,7 @@ export default async function Page() {
 
         <div className="w-full flex flex-col items-center gap-10 py-12 px-12 shadow-[0_4px_4px_0_rgba(0,0,0,0.08)] backdrop-blur-[2px] rounded-3xl">
           <div className="w-full grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-y-6 md:gap-x-28 xl:gap-x-20 mt-2">
-            {data.map((obj, index) => (
+            {data.ayahs.map((obj, index) => (
               <SurahCard key={index} data={obj} />
             ))}
           </div>

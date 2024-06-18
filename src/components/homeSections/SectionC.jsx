@@ -1,6 +1,6 @@
 import TitleLabel from "../UI/TitleLabel";
 
-export default function Section3({ children }) {
+export default function SectionC({ children }) {
   return (
     <section className="h-screen relative overflow-hidden">
       <div className="md:bg-blue-gradient bg-blue-gradient-mobile blur-2xl h-full w-full absolute top-0 left-0"></div>

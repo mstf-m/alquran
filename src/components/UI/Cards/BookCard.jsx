@@ -1,7 +1,6 @@
 import { Button, Image, Link } from "@nextui-org/react";
 
 export default function BookCard({key, id, title, imageURL}) {
-  console.log(imageURL)
   return (
     <div className="rounded-2xl shadow-[0_0_7px_0_rgba(0,0,0,0.2)] max-w-fit px-2 pb-2 mx-auto bg-whites">
       <Image

@@ -17,7 +17,7 @@ import { Image } from "@nextui-org/react";
 export default function HeaderSecondary() {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
 
-  const menuItems = ["HOME", "QURAN", "BLOG", "ABOUT US", "Log Out"];
+  const menuItems = [{title:"HOME", href:"/"},{title:"QURAN", href:"/quran"}, {title:"BLOG", href:"/"}, {title:"ABOUT US", href:"/"}, ];
 
   return (
     <header className="w-full bg-header-blue-gradient">
@@ -51,9 +51,9 @@ export default function HeaderSecondary() {
           <NavbarItem>
             <Button
               as={Link}
-              className="text-neutral-color-800 rounded-2xl"
+              className="md:text-neutral-color-800 text-white rounded-2xl"
               color=""
-              href="#"
+              href="/"
               variant="flat"
             >
               HOME
@@ -62,7 +62,7 @@ export default function HeaderSecondary() {
           <NavbarItem isActive>
             <Button
               as={Link}
-              className="text-neutral-color-800"
+              className="md:text-neutral-color-800 text-white"
               color="primary"
               href="#"
               variant="flat"
@@ -73,7 +73,7 @@ export default function HeaderSecondary() {
           <NavbarItem>
             <Button
               as={Link}
-              className="text-neutral-color-800"
+              className="md:text-neutral-color-800 text-white"
               color=""
               href="#"
               variant="flat"
@@ -84,7 +84,7 @@ export default function HeaderSecondary() {
           <NavbarItem>
             <Button
               as={Link}
-              className="text-neutral-color-800"
+              className="md:text-neutral-color-800 text-white"
               color=""
               href="#"
               variant="flat"
@@ -112,22 +112,19 @@ export default function HeaderSecondary() {
           <Image src="/Wetalk-logo.png" alt="" />
         </NavbarContent>
 
-        <NavbarMenu className="bg-black/10 backdrop-blur-lg">
+        <NavbarMenu className="bg-black/30 backdrop-blur-lg">
           {menuItems.map((item, index) => (
             <NavbarMenuItem key={`${item}-${index}`}>
               <Link
-                color={
-                  index === 2
-                    ? "primary"
-                    : index === menuItems.length - 1
-                    ? "danger"
-                    : "success"
-                }
-                className="w-full"
-                href="#"
+                className={`w-full my-3 ${
+                  index === 1
+                    ? "text-neutral-color-800"
+                    : "text-white"
+                }`} 
+                href={item.href}
                 size="lg"
               >
-                {item}
+                {item.title}
               </Link>
             </NavbarMenuItem>
           ))}

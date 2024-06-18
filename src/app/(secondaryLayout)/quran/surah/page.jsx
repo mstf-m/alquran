@@ -61,7 +61,6 @@ export default function Page() {
       }
       const result = await res.json();
       setSingleAyah(result.ayahs[0]);
-      console.log(result.ayahs[0])
     }
     
     getAyah(ayahId);
@@ -82,9 +81,9 @@ export default function Page() {
               <SurahButton key={index} data={obj} />
             ))}
           </div>
-          <div className="flex md:flex-col gap-4 overflow-y-auto pr-2">
+          <div className="flex md:flex-col gap-4 overflow-y-auto pr-2 pb-2">
             {singleSurah.map((obj, index) => (
-              <AyahButton key={index} id={obj.id} i={index} />
+              <AyahButton key={index} id={obj.id} i={index} onOpen={onOpen}/>
             ))}
           </div>
         </div>
@@ -92,7 +91,7 @@ export default function Page() {
         <div className="md:col-span-3 flex flex-col items-center py-4 md:px-20 border border-neutral-color-400 bg-white/20 shadow-[0_4px_4px_0_rgba(0,0,0,0.08)] backdrop-blur-[2px] rounded-3xl max-h-screen overflow-y-auto">
           <div className="px-5 md:px-10 lg:px-20 py-6">
             <div
-              className="text-justify leading-[60px] font-bold"
+              className="text-justify leading-[60px] font-medium"
               dir="rtl"
             >
               {singleSurah.map((obj, index) => (

@@ -2,10 +2,10 @@ import FramerTrigger from "@/wrappers/FramerTrigger";
 import Footer from "../UI/Footer";
 import TitleLabel from "../UI/TitleLabel";
 
-export default function Section2({ children, footer = false, isJustifyStart=false }) {
+export default function SectionB({ children, footer = false, isJustifyStart=false }) {
   return (
     <section className="h-screen md:pt-11 relative flex flex-col">
-      <FramerTrigger position={200} style={'h-full'}>
+      <FramerTrigger position={50} style={'h-full'}>
         {/* need change */}
         <div className="flex flex-col items-end bg-cream-gradient-mobile md:bg-cream-gradient container float-right md:rounded-s-3xl h-full md:h-fit">
           <TitleLabel direction='left'/>

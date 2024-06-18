@@ -3,11 +3,12 @@
 import { useQuranStore } from "@/stores/quran-store";
 import { Button } from "@nextui-org/react";
 
-export default function AyahButton({ id, i }) {
+export default function AyahButton({ id, i, onOpen }) {
   const update = useQuranStore((state) => state.updateAyahId);
 
   const updateAyahId = () => {
     update(id);
+    onOpen();
   };
 
   return (

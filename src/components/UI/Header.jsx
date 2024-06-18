@@ -18,7 +18,7 @@ import { SvgSearch } from "../Svgs";
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
 
-  const menuItems = ["HOME", "QURAN", "BLOG", "ABOUT US", "Log Out"];
+  const menuItems = [{title:"HOME", href:"/"},{title:"QURAN", href:"/quran"}, {title:"BLOG", href:"/"}, {title:"ABOUT US", href:"/"}, ];
 
   return (
     <header>
@@ -117,18 +117,15 @@ export default function Header() {
           {menuItems.map((item, index) => (
             <NavbarMenuItem key={`${item}-${index}`}>
               <Link
-                color={
-                  index === 2
-                    ? "primary"
-                    : index === menuItems.length - 1
-                    ? "danger"
-                    : "success"
-                }
-                className="w-full"
-                href="#"
+                className={`w-full my-3 ${
+                  index === 0
+                    ? "text-yellow-primary"
+                    : "text-white"
+                }`} 
+                href={item.href}
                 size="lg"
               >
-                {item}
+                {item.title}
               </Link>
             </NavbarMenuItem>
           ))}

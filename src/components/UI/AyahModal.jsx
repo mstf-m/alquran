@@ -44,7 +44,7 @@ export default function AyahModal({ isOpen, onOpenChange, data }) {
       placement="auto"
       backdrop="blur"
     >
-      <ModalContent className="min-h-[70vh]">
+      <ModalContent className="md:min-h-[70vh]">
         {(onClose) => (
           <>
             <ModalHeader ></ModalHeader>

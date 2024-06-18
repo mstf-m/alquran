@@ -1,8 +1,8 @@
 "use client";
 
-import Section1 from "@/components/homeSections/Section1";
-import Section2 from "@/components/homeSections/Section2";
-import Section3 from "@/components/homeSections/Section3";
+import SectionA from "@/components/homeSections/SectionA";
+import SectionB from "@/components/homeSections/SectionB";
+import SectionC from "@/components/homeSections/SectionC";
 
 import { Image } from "@nextui-org/react";
 import {
@@ -20,7 +20,7 @@ import DiscriptionCard from "@/components/UI/Cards/DiscriptionCard";
 import { useEffect, useState } from "react";
 
 export default function Home() {
-  const [screenWidth, setScreenWidth] = useState(1000);
+  const [screenWidth, setScreenWidth] = useState(500);
   const [animationStartPosition, setAnimationStartPosition] = useState(0);
 
   useEffect(() => {
@@ -28,15 +28,15 @@ export default function Home() {
   }, []);
 
   useEffect(() => {
-    screenWidth >= 768 ? setAnimationStartPosition(500) : setAnimationStartPosition(100);
+    screenWidth >= 768 ? setAnimationStartPosition(500) : setAnimationStartPosition(50);
   }, [screenWidth]);
 
   return (
-    <main>
+    <main className="overflow-hidden">
       <FullpageProvider screenWidth={screenWidth}>
-        <Section1 screenWidth={screenWidth} />
+        <SectionA screenWidth={screenWidth} />
 
-        <Section2 isJustifyStart>
+        <SectionB isJustifyStart>
           <div className="flex flex-col items-center md:max-w-80 mx-4 md:mx-0 md:ml-20 md:mt-20 gap-10 pb-9">
             <DiscriptionCard
               style="border-gray-50"
@@ -56,10 +56,10 @@ export default function Home() {
           </div>
 
           <Image src="/quran-image1.png" alt="" className="bg-yellow-radial" />
-        </Section2>
+        </SectionB>
 
-        <Section3>
-          <FramerTrigger position={-animationStartPosition}>
+        <SectionC>
+          <FramerTrigger position={animationStartPosition}>
             {screenWidth >= 768 ? (
               <Image src="/quran-image2.png" alt="" />
             ) : (
@@ -111,9 +111,9 @@ export default function Home() {
               <PrimaryButton title="See More" href="#" />
             </div>
           </FramerTrigger>
-        </Section3>
+        </SectionC>
 
-        <Section2>
+        <SectionB>
           <div className="flex flex-col-reverse md:flex-row items-center py-4 md:py-14 px-4 md:px-10 md:gap-16">
             <div className="flex flex-col max-w-80 gap-4 md:gap-10">
               <DiscriptionCard
@@ -139,9 +139,9 @@ export default function Home() {
               <CarouselStories screenWidth={screenWidth} />
             </div>
           </div>
-        </Section2>
+        </SectionB>
 
-        <Section3>
+        <SectionC>
           <FramerTrigger position={-animationStartPosition}>
             {screenWidth >= 768 ? (
               <Image src="/quran-image3.png" alt="" />
@@ -215,14 +215,14 @@ export default function Home() {
               <PrimaryButton title="See More" href="#" />
             </div>
           </FramerTrigger>
-        </Section3>
+        </SectionC>
 
-        <Section2 footer>
-          <div className="flex flex-col items-center gap-10 py-14 pl-10 overflow-hidden px-6 md:px-0">
+        <SectionB footer>
+          <div className="flex flex-col items-center gap-2 md:gap-10 py-0 md:py-14 pl-10 overflow-hidden px-6 md:px-0">
             <CarouselBooks />
             <PrimaryButton title="See More" href="/library" />
           </div>
-        </Section2>
+        </SectionB>
       </FullpageProvider>
     </main>
   );
