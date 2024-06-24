@@ -3,7 +3,13 @@ import withPWAInit from "@ducanh2912/next-pwa";
 
 // Initialize withPWA with configuration
 const withPWA = withPWAInit({
-  dest: "public",
+  reactStrictMode: true,
+	pwa: {
+		dest: "public",
+		register: true,
+		skipWaiting: true,
+		buildExcludes: [/middleware-manifest.json$/]
+	}
 });
 
 // Define the Next.js configuration
