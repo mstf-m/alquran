@@ -9,17 +9,19 @@ import { useQuranStore } from "@/stores/quran-store";
 import { useEffect, useState } from "react";
 import { Spinner, useDisclosure } from "@nextui-org/react";
 import AyahModal from "@/components/UI/AyahModal";
+import { Skeleton } from "@nextui-org/react";
 
 export default function Page() {
-  const [allSurahs, setAllSurahs] = useState([]);
-  const [singleSurah, setSingleSurah] = useState([]);
-  const [singleAyah, setSingleAyah] = useState([]);
+  const [allSurahs, setAllSurahs] = useState(null);
+  const [singleSurah, setSingleSurah] = useState(null);
+  const [singleAyah, setSingleAyah] = useState(null);
   const { surahId, ayahId } = useQuranStore();
 
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
 
   useEffect(() => {
     async function getAllSurahs() {
+      setAllSurahs(null);
       const res = await fetch(`${process.env.mainURL}/quran/v1/surah`);
       if (!res.ok) {
         throw new Error("Failed to fetch data");
@@ -32,6 +34,7 @@ export default function Page() {
 
   useEffect(() => {
     async function getSurah(id) {
+      setSingleSurah(null);
       const res = await fetch(
         `${process.env.mainURL}/quran/v1/surah-ayahs?surah=${id}`
       );
@@ -72,18 +75,49 @@ export default function Page() {
         <div className="mx-auto container mb-20 md:mb-28 grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="md:col-span-1 flex flex-col md:flex-row justify-center gap-4 p-4 border border-neutral-color-400 bg-[#C2C2C2]/10 shadow-[0_4px_4px_0_rgba(0,0,0,0.08)] backdrop-blur-[2px] rounded-3xl max-h-screen">
             <div className="flex md:flex-col gap-4 overflow-y-auto pr-2 pb-2">
-              {allSurahs.length == 0 ? (
-                <Spinner size="lg" className="pt-7"/>
+              {!allSurahs ? (
+                <>
+                  <Skeleton className="rounded-xl md:w-36 w-20 h-12" />
+                  <Skeleton className="rounded-xl md:w-36 w-20 h-12" />
+                  <Skeleton className="rounded-xl md:w-36 w-20 h-12" />
+                  <Skeleton className="hidden md:flex rounded-xl w-36 h-12" />
+                  <Skeleton className="hidden md:flex rounded-xl w-36 h-12" />
+                  <Skeleton className="hidden md:flex rounded-xl w-36 h-12" />
+                  <Skeleton className="hidden md:flex rounded-xl w-36 h-12" />
+                  <Skeleton className="hidden md:flex rounded-xl w-36 h-12" />
+                  <Skeleton className="hidden md:flex rounded-xl w-36 h-12" />
+                  <Skeleton className="hidden md:flex rounded-xl w-36 h-12" />
+                </>
               ) : (
                 allSurahs.map((obj, index) => (
                   <SurahButton key={index} data={obj} />
                 ))
               )}
             </div>
-            <div className="flex md:flex-col gap-4 overflow-y-auto pr-2 pb-2">
-              {singleSurah.map((obj, index) => (
-                <AyahButton key={index} id={obj.id} i={index} onOpen={onOpen} />
-              ))}
+            <div className="flex md:flex-col gap-4 overflow-y-auto overflow-x-hidden pr-2 pb-2">
+              {!singleSurah ? (
+                <>
+                  <Skeleton className="rounded-xl w-12 md:w-14 h-12" />
+                  <Skeleton className="rounded-xl w-12 md:w-14 h-12" />
+                  <Skeleton className="rounded-xl w-12 md:w-14 h-12" />
+                  <Skeleton className="rounded-xl w-12 md:w-14 h-12" />
+                  <Skeleton className="rounded-xl w-12 md:w-14 h-12" />
+                  <Skeleton className="hidden md:flex rounded-xl w-14 h-12" />
+                  <Skeleton className="hidden md:flex rounded-xl w-14 h-12" />
+                  <Skeleton className="hidden md:flex rounded-xl w-14 h-12" />
+                  <Skeleton className="hidden md:flex rounded-xl w-14 h-12" />
+                  <Skeleton className="hidden md:flex rounded-xl w-14 h-12" />
+                </>
+              ) : (
+                singleSurah.map((obj, index) => (
+                  <AyahButton
+                    key={index}
+                    id={obj.id}
+                    i={index}
+                    onOpen={onOpen}
+                  />
+                ))
+              )}
             </div>
           </div>
 
@@ -93,8 +127,8 @@ export default function Page() {
                 className="text-justify leading-[60px] font-medium"
                 dir="rtl"
               >
-                {singleSurah.length == 0 ? (
-                  <Spinner size="lg" />
+                {!singleSurah ? (
+                  <Spinner size="lg" className="py-20"/>
                 ) : (
                   singleSurah.map((obj, index) => (
                     <Ayah
