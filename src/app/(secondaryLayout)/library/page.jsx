@@ -18,7 +18,7 @@ export default async function Page() {
       <Breadcrumb />
       <BgPattern />
       <div className="mx-auto container flex flex-col items-center mb-20 md:mb-28 gap-16">
-        <div className="w-full grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-y-8 gap-x-10 justify-between mt-2">
+        <div className="w-full grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-4 md:gap-y-8 md:gap-x-10 mt-2">
           {data.map((obj, index) => (
             <BookCard
               key={index}

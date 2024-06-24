@@ -37,7 +37,7 @@ export default function Home() {
         <SectionA screenWidth={screenWidth} />
 
         <SectionB isJustifyStart>
-          <div className="flex flex-col items-center md:max-w-80 mx-4 md:mx-0 md:ml-20 md:mt-20 gap-10 pb-9">
+          <div className="flex flex-col items-center md:max-w-96 mx-4 md:mx-0 md:ml-20 md:mt-20 gap-10 pb-9">
             <DiscriptionCard
               style="border-gray-50"
               title="Quran"

@@ -44,7 +44,7 @@ export default function AyahModal({ isOpen, onOpenChange, data }) {
       placement="auto"
       backdrop="blur"
     >
-      <ModalContent className="md:min-h-[70vh]">
+      <ModalContent className="md:min-h-[70vh] max-h-[90vh] overflow-y-scroll">
         {(onClose) => (
           <>
             <ModalHeader ></ModalHeader>

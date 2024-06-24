@@ -28,10 +28,11 @@ export default function Breadcrumb({ bookName = null }) {
               <li key={index} className="min-w-fit">
                 {isNaN(segment) ? (
                   // If the segment is not a number (e.g., it's the book name)
-                  <Link href={RouteDetector(index)} className="text-neutral-color-800 text-lg font-medium hover:text-neutral-color-600">{segment}</Link>
+                  <Link href={RouteDetector(index)} className="text-neutral-color-800 hover:text-blue-text">{segment}</Link>
                 ) : (
-                  // If the segment is a number, replace it with the book name
+                  // If the segment is a number, replace it with the book name\
                   bookName
+                  
                 )}
                 {index < pathSegments.length - 1 && (
                   <HiArrowNarrowRight className="inline mx-3" />

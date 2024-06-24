@@ -8,7 +8,7 @@ import SecondaryButton from "../UI/Buttons/SecondaryButton";
 export default function SectionA({screenWidth}) {
 
   return (
-    <section className="h-[92vh] md:h-screen flex flex-col justify-between md:justify-start">
+    <section className="h-[93vh] md:h-screen flex flex-col justify-between md:justify-start">
       <Header />
 
       {screenWidth >= 768 ? (
