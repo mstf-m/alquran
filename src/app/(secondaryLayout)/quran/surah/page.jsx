@@ -10,11 +10,13 @@ import { useEffect, useState } from "react";
 import { Spinner, useDisclosure } from "@nextui-org/react";
 import AyahModal from "@/components/UI/AyahModal";
 import { Skeleton } from "@nextui-org/react";
+import NoNetCard from "@/components/UI/Cards/NoNetCard";
 
 export default function Page() {
   const [allSurahs, setAllSurahs] = useState(null);
   const [singleSurah, setSingleSurah] = useState(null);
   const [singleAyah, setSingleAyah] = useState(null);
+  const [isError, setIsError] = useState(false);
   const { surahId, ayahId } = useQuranStore();
 
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
@@ -35,14 +37,19 @@ export default function Page() {
   useEffect(() => {
     async function getSurah(id) {
       setSingleSurah(null);
-      const res = await fetch(
-        `${process.env.mainURL}/quran/v1/surah-ayahs?surah=${id}`
-      );
-      if (!res.ok) {
+      try {
+        const res = await fetch(
+          `${process.env.mainURL}/quran/v1/surah-ayahs?surah=${id}`
+        );
+        const result = await res.json();
+        setSingleSurah(result.ayahs);
+      } catch (error) {
+        setIsError(true);
         throw new Error("Failed to fetch data");
       }
-      const result = await res.json();
-      setSingleSurah(result.ayahs);
+      // if (!res.ok) {
+      //   throw new Error("Failed to fetch data");
+      // }
     }
 
     getSurah(surahId);
@@ -128,7 +135,11 @@ export default function Page() {
                 dir="rtl"
               >
                 {!singleSurah ? (
-                  <Spinner size="lg" className="py-20"/>
+                  isError ? (
+                    <NoNetCard />
+                  ) : (
+                    <Spinner size="lg" className="py-20" />
+                  )
                 ) : (
                   singleSurah.map((obj, index) => (
                     <Ayah
